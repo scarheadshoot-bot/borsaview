@@ -1,17 +1,19 @@
-type Props = {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-};
+import { Link } from "@/i18n/navigation";
 
-export default function SectionHeading({ eyebrow, title, description }: Props) {
+export default function Logo() {
   return (
-    <div className="max-w-2xl">
-      {eyebrow && (
-        <p className="mb-2 text-sm font-semibold text-accent">{eyebrow}</p>
-      )}
-      <h2 className="text-2xl font-bold sm:text-3xl">{title}</h2>
-      {description && <p className="mt-3 text-muted">{description}</p>}
-    </div>
+    <Link href="/" className="flex items-center gap-2" aria-label="BorsaView">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" className="fill-accent" />
+        <path
+          d="M7 19l5-5 3 3 6-7"
+          className="stroke-accent-foreground"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <span className="text-lg font-bold tracking-tight">BorsaView</span>
+    </Link>
   );
 }
