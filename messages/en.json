@@ -1,0 +1,29 @@
+{
+  "Meta": {
+    "title": "BorsaView | بورسا فيو",
+    "description": "An informational and educational platform for economics and financial markets."
+  },
+  "Nav": {
+    "home": "Home",
+    "markets": "Markets",
+    "gold": "Gold",
+    "currencies": "Currencies",
+    "stocks": "Stocks & Indices",
+    "news": "News",
+    "analysis": "Analysis",
+    "academy": "Academy",
+    "economy": "Economy & Thought",
+    "contact": "Contact"
+  },
+  "Language": { "switch": "العربية" },
+  "Home": {
+    "title": "Understand financial markets clearly",
+    "subtitle": "BorsaView is an information, analysis and education platform presenting economic and financial content in a clear, simple way.",
+    "cta": "Explore the Academy"
+  },
+  "Footer": {
+    "about": "An informational and educational finance and economics platform.",
+    "notice": "BorsaView is not a broker and does not execute trades. Content is for informational and educational purposes.",
+    "rights": "All rights reserved."
+  }
+}
