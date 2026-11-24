@@ -1,62 +1,117 @@
-@import "tailwindcss";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import Hero from "@/components/home/Hero";
+import Section from "@/components/home/Section";
+import FeatureCard from "@/components/home/FeatureCard";
+import EmptyState from "@/components/home/EmptyState";
+import CtaPanel from "@/components/home/CtaPanel";
+import {
+  GoldIcon,
+  CurrencyIcon,
+  StocksIcon,
+  NewsIcon,
+  AnalysisIcon,
+  AcademyIcon,
+  EconomyIcon,
+} from "@/components/ui/Icons";
 
-/* ===== نظام الألوان المركزي: عدّل القيم هنا فقط ===== */
-@theme {
-  --color-background: #0a0e14;
-  --color-surface: #111722;
-  --color-surface-2: #171f2e;
-  --color-border: #222c3d;
-  --color-foreground: #e8edf5;
-  --color-muted: #8b98ad;
-  --color-accent: #d4a84b;
-  --color-accent-foreground: #0a0e14;
-  --color-positive: #2fbf8f;
-  --color-negative: #e5675f;
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Home");
 
-  --font-sans: var(--font-inter), var(--font-cairo), system-ui, sans-serif;
-}
+  return (
+    <>
+      <Hero />
 
-html {
-  color-scheme: dark;
-  scroll-behavior: smooth;
-}
+      <Section
+        eyebrow={t("markets.eyebrow")}
+        title={t("markets.title")}
+        description={t("markets.desc")}
+      >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <FeatureCard
+            href="/gold"
+            icon={<GoldIcon />}
+            title={t("markets.gold.title")}
+            description={t("markets.gold.desc")}
+            cta={t("markets.explore")}
+          />
+          <FeatureCard
+            href="/currencies"
+            icon={<CurrencyIcon />}
+            title={t("markets.currencies.title")}
+            description={t("markets.currencies.desc")}
+            cta={t("markets.explore")}
+          />
+          <FeatureCard
+            href="/stocks"
+            icon={<StocksIcon />}
+            title={t("markets.stocks.title")}
+            description={t("markets.stocks.desc")}
+            cta={t("markets.explore")}
+          />
+        </div>
+      </Section>
 
-/* الخط العربي للصفحات العربية */
-html[lang="ar"] {
-  font-family: var(--font-cairo), var(--font-inter), system-ui, sans-serif;
-}
+      <Section
+        tone="alt"
+        eyebrow={t("news.eyebrow")}
+        title={t("news.title")}
+        description={t("news.desc")}
+      >
+        <EmptyState
+          icon={<NewsIcon />}
+          title={t("news.emptyTitle")}
+          description={t("news.emptyDesc")}
+          cta={t("news.cta")}
+          href="/news"
+        />
+      </Section>
 
-body {
-  -webkit-font-smoothing: antialiased;
-}
+      <Section
+        eyebrow={t("analysis.eyebrow")}
+        title={t("analysis.title")}
+        description={t("analysis.desc")}
+      >
+        <EmptyState
+          icon={<AnalysisIcon />}
+          title={t("analysis.emptyTitle")}
+          description={t("analysis.emptyDesc")}
+          cta={t("analysis.cta")}
+          href="/analysis"
+        />
+      </Section>
 
-/* ===== تأثيرات الصفحة الرئيسية ===== */
-.hero-glow {
-  background-image:
-    radial-gradient(60% 50% at 80% 0%, rgba(212, 168, 75, 0.12), transparent 70%),
-    radial-gradient(40% 40% at 0% 100%, rgba(47, 191, 143, 0.06), transparent 70%);
-}
+      <Section
+        tone="alt"
+        eyebrow={t("academy.eyebrow")}
+        title={t("academy.title")}
+        description={t("academy.desc")}
+      >
+        <CtaPanel
+          icon={<AcademyIcon />}
+          body={t("academy.body")}
+          cta={t("academy.cta")}
+          href="/academy"
+        />
+      </Section>
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.fade-up {
-  animation: fade-up 0.6s ease-out both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fade-up {
-    animation: none;
-  }
-  html {
-    scroll-behavior: auto;
-  }
+      <Section
+        eyebrow={t("economy.eyebrow")}
+        title={t("economy.title")}
+        description={t("economy.desc")}
+      >
+        <CtaPanel
+          icon={<EconomyIcon />}
+          body={t("economy.body")}
+          cta={t("economy.cta")}
+          href="/economy"
+        />
+      </Section>
+    </>
+  );
 }
