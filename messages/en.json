@@ -17,9 +17,61 @@
   },
   "Language": { "switch": "العربية" },
   "Home": {
-    "title": "Understand financial markets clearly",
-    "subtitle": "BorsaView is an information, analysis and education platform presenting economic and financial content in a clear, simple way.",
-    "cta": "Explore the Academy"
+    "hero": {
+      "badge": "Informational & educational platform",
+      "title": "Understand financial markets clearly",
+      "subtitle": "BorsaView brings news, analysis and learning content together in one place, in a clear and simple style for beginners and experienced followers alike.",
+      "ctaPrimary": "Start with the Academy",
+      "ctaSecondary": "Browse the markets"
+    },
+    "markets": {
+      "eyebrow": "Markets",
+      "title": "A quick look at the markets",
+      "desc": "Pick the market you care about to learn about it and follow what matters.",
+      "explore": "Explore",
+      "gold": {
+        "title": "Gold",
+        "desc": "Everything about the precious metal: what moves its price, how to read its movement, and following XAU/USD."
+      },
+      "currencies": {
+        "title": "Currencies",
+        "desc": "Get to know the major currencies and pairs, and what drives exchange rates."
+      },
+      "stocks": {
+        "title": "Stocks & Indices",
+        "desc": "Global indices and major stocks, with a simple guide to reading them."
+      }
+    },
+    "news": {
+      "eyebrow": "News",
+      "title": "Economic news",
+      "desc": "We pick the key stories and link to the original sources so you can read them there.",
+      "emptyTitle": "News links will appear here",
+      "emptyDesc": "Once the first story is added, you will find it here with its source and link.",
+      "cta": "News page"
+    },
+    "analysis": {
+      "eyebrow": "Analysis",
+      "title": "Analysis & insights",
+      "desc": "Clear market analysis and commentary, for informational and educational purposes.",
+      "emptyTitle": "Analysis will appear here",
+      "emptyDesc": "The latest analysis will be shown here as soon as it is published.",
+      "cta": "Analysis page"
+    },
+    "academy": {
+      "eyebrow": "Academy",
+      "title": "Learn the markets from scratch",
+      "desc": "Simple slide-based lessons that explain concepts step by step.",
+      "body": "Clear learning slides that help you understand financial markets with no prior experience.",
+      "cta": "Open the Academy"
+    },
+    "economy": {
+      "eyebrow": "Economy & Thought",
+      "title": "Economy & Thought",
+      "desc": "Articles and ideas that go beyond the numbers to explain the economy.",
+      "body": "A space for articles and ideas that explain how the economy works and why markets move.",
+      "cta": "Read more"
+    }
   },
   "Footer": {
     "about": "An informational and educational finance and economics platform.",
