@@ -1,81 +1,84 @@
+
 {
   "Meta": {
-    "title": "BorsaView | بورسا فيو",
-    "description": "An informational and educational platform for economics and financial markets."
+    "title": "BorsaView | Your Vision Begins with an Opportunity",
+    "description": "Discover financial markets, explore trading opportunities and take your first step towards your vision."
   },
   "Nav": {
     "home": "Home",
     "markets": "Markets",
     "gold": "Gold",
-    "currencies": "Currencies",
+    "currencies": "Forex",
     "stocks": "Stocks & Indices",
-    "news": "News",
-    "analysis": "Analysis",
-    "academy": "Academy",
-    "economy": "Economy & Thought",
+    "news": "Market News",
+    "analysis": "Insights & Analysis",
+    "academy": "Knowledge",
+    "economy": "Economy",
     "contact": "Contact"
   },
-  "Language": { "switch": "العربية" },
+  "Language": {
+    "switch": "العربية"
+  },
   "Home": {
     "hero": {
-      "badge": "Informational & educational platform",
-      "title": "Understand financial markets clearly",
-      "subtitle": "BorsaView brings news, analysis and learning content together in one place, in a clear and simple style for beginners and experienced followers alike.",
-      "ctaPrimary": "Start with the Academy",
-      "ctaSecondary": "Browse the markets"
+      "badge": "YOUR VISION. YOUR OPPORTUNITY.",
+      "title": "Your Vision Begins with an Opportunity.",
+      "subtitle": "Discover the world of financial markets, explore trading opportunities and take your first step towards your vision.",
+      "ctaPrimary": "Explore Markets",
+      "ctaSecondary": "Start Learning"
     },
     "markets": {
-      "eyebrow": "Markets",
-      "title": "A quick look at the markets",
-      "desc": "Pick the market you care about to learn about it and follow what matters.",
-      "explore": "Explore",
+      "eyebrow": "FINANCIAL MARKETS",
+      "title": "A World of Opportunities.",
+      "desc": "Different markets. Different horizons. Discover the markets that matter to you.",
+      "explore": "Explore Market",
       "gold": {
         "title": "Gold",
-        "desc": "Everything about the precious metal: what moves its price, how to read its movement, and following XAU/USD."
+        "desc": "Explore the gold market and its movements, where economic forces meet the value of a precious metal."
       },
       "currencies": {
-        "title": "Currencies",
-        "desc": "Get to know the major currencies and pairs, and what drives exchange rates."
+        "title": "Forex",
+        "desc": "Discover the world of currencies and pairs in markets that move with every moment."
       },
       "stocks": {
         "title": "Stocks & Indices",
-        "desc": "Global indices and major stocks, with a simple guide to reading them."
+        "desc": "Explore global stock markets and financial indices."
       }
     },
     "news": {
-      "eyebrow": "News",
-      "title": "Economic news",
-      "desc": "We pick the key stories and link to the original sources so you can read them there.",
-      "emptyTitle": "News links will appear here",
-      "emptyDesc": "Once the first story is added, you will find it here with its source and link.",
-      "cta": "News page"
+      "eyebrow": "MARKET INSIGHTS",
+      "title": "Beyond Market Movements.",
+      "desc": "Follow the events and developments shaping financial markets.",
+      "emptyTitle": "The Market Never Stands Still.",
+      "emptyDesc": "We are preparing a space for the latest market news and developments.",
+      "cta": "Explore News"
     },
     "analysis": {
-      "eyebrow": "Analysis",
-      "title": "Analysis & insights",
-      "desc": "Clear market analysis and commentary, for informational and educational purposes.",
-      "emptyTitle": "Analysis will appear here",
-      "emptyDesc": "The latest analysis will be shown here as soon as it is published.",
-      "cta": "Analysis page"
+      "eyebrow": "MARKET PERSPECTIVES",
+      "title": "Beyond the Numbers.",
+      "desc": "Insights and analysis to help you understand financial markets from different perspectives.",
+      "emptyTitle": "A Deeper Market Perspective.",
+      "emptyDesc": "Discover market analysis and insights as they are published.",
+      "cta": "Explore Analysis"
     },
     "academy": {
-      "eyebrow": "Academy",
-      "title": "Learn the markets from scratch",
-      "desc": "Simple slide-based lessons that explain concepts step by step.",
-      "body": "Clear learning slides that help you understand financial markets with no prior experience.",
-      "cta": "Open the Academy"
+      "eyebrow": "KNOWLEDGE",
+      "title": "Knowledge Expands Your Vision.",
+      "desc": "Understand financial markets and trading concepts before taking your next step.",
+      "body": "Explore educational resources designed to help you understand financial markets and trading instruments.",
+      "cta": "Explore Knowledge"
     },
     "economy": {
-      "eyebrow": "Economy & Thought",
-      "title": "Economy & Thought",
-      "desc": "Articles and ideas that go beyond the numbers to explain the economy.",
-      "body": "A space for articles and ideas that explain how the economy works and why markets move.",
-      "cta": "Read more"
+      "eyebrow": "ECONOMY",
+      "title": "Understand the World Around You.",
+      "desc": "Economics is more than numbers. It is a network of decisions and forces.",
+      "body": "Explore the economic ideas that help you see the world from a broader perspective.",
+      "cta": "Read & Explore"
     }
   },
   "Footer": {
-    "about": "An informational and educational finance and economics platform.",
-    "notice": "BorsaView is not a broker and does not execute trades. Content is for informational and educational purposes.",
+    "about": "Your Vision Begins with an Opportunity. Discover financial markets and trading opportunities with BorsaView.",
+    "notice": "Trading in financial markets involves risk and may result in the loss of capital. Review the risks and service terms before opening an account.",
     "rights": "All rights reserved."
   }
 }
