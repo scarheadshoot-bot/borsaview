@@ -1,0 +1,64 @@
+name: Preview screenshots
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run build
+      - run: npm install --no-save playwright@1.49.0
+      - run: npx playwright install --with-deps chromium
+      - name: Start site and take screenshots
+        run: |
+          nohup npm run start > server.log 2>&1 &
+          for i in $(seq 1 40); do
+            curl -sf http://localhost:3000/ar > /dev/null && break
+            sleep 2
+          done
+          cat > shoot.mjs <<'EOF'
+          import { chromium } from "playwright";
+          import fs from "node:fs";
+          fs.mkdirSync("shots", { recursive: true });
+          const pages = [
+            ["ar-home", "/ar"],
+            ["en-home", "/en"],
+          ];
+          const sizes = {
+            mobile: { width: 390, height: 844 },
+            desktop: { width: 1280, height: 800 },
+          };
+          const browser = await chromium.launch();
+          for (const [name, path] of pages) {
+            for (const [label, viewport] of Object.entries(sizes)) {
+              const page = await browser.newPage({ viewport });
+              await page.goto("http://localhost:3000" + path, { waitUntil: "networkidle" });
+              await page.waitForTimeout(1500);
+              await page.screenshot({ path: "shots/" + name + "-" + label + ".png", fullPage: true });
+              await page.close();
+            }
+          }
+          await browser.close();
+          EOF
+          node shoot.mjs
+      - name: Publish screenshots to the previews branch
+        run: |
+          mkdir /tmp/pv
+          cp shots/*.png /tmp/pv/
+          cd /tmp/pv
+          git init -b previews
+          git config user.name "preview-bot"
+          git config user.email "preview-bot@users.noreply.github.com"
+          git add .
+          git commit -m "Update previews"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push -f origin previews
