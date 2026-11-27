@@ -10,6 +10,7 @@ if (!url) {
 }
 
 const outputDir = path.resolve("screenshots");
+
 fs.mkdirSync(outputDir, { recursive: true });
 
 const browser = await chromium.launch({
@@ -66,16 +67,16 @@ try {
     title: document.title,
     text: document.body.innerText.slice(0, 1500),
     width: document.documentElement.scrollWidth,
-    height: document.documentElement.scrollHeight,
-    background: getComputedStyle(document.body).backgroundColor
+    height: document.documentElement.scrollHeight
   }));
 
-  console.log("PAGE INFO:", JSON.stringify(pageInfo, null, 2));
+  console.log(
+    "PAGE INFO:",
+    JSON.stringify(pageInfo, null, 2)
+  );
 
   if (!pageInfo.text.trim()) {
-    throw new Error(
-      "Website appears empty. Screenshot was not published."
-    );
+    throw new Error("Website appears empty.");
   }
 
   const screenshotPath = path.join(
@@ -85,7 +86,7 @@ try {
 
   await page.screenshot({
     path: screenshotPath,
-    fullPage: true,
+    fullPage: false,
     animations: "disabled",
     type: "png"
   });
